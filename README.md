@@ -4,7 +4,7 @@ Ps2Unreal `0.1.1` 是 Unreal Engine 5 编辑器插件，用于把 PS2UI Photosho
 
 ## 前置：安装 PS2UI
 
-本仓库不包含 Photoshop 插件。先从 [PS2UI Releases](https://github.com/Homer79980/PS2UI-Releases/releases/latest) 安装 `PS2UI-Photoshop-<版本>.ccx`，然后在 Photoshop 中导出包含 `layout.json` 和 `sprites/` 的 Package。
+本仓库不包含 Photoshop 插件。先从 [PS2UI Releases](https://github.com/Homer79980/PS2UI/releases/latest) 安装 `PS2UI-Photoshop-<版本>.ccx`，然后在 Photoshop 中导出包含 `layout.json` 和 `sprites/` 的 Package。
 
 ## 下载
 
