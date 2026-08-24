@@ -14,10 +14,9 @@ Ps2Unreal `0.1.1` 是 Unreal Engine 5 编辑器插件，用于把 PS2UI Photosho
 |---|---|
 | `Ps2Unreal-0.1.1-UE5.7-Win64.zip` | UE 5.7 Win64 预编译包 |
 | `Ps2Unreal-0.1.1-UE5.8-Win64.zip` | UE 5.8 Win64 预编译包 |
-| `Ps2Unreal-0.1.1.zip` | 通用源码包，用于其它 UE5 小版本自行编译 |
-| `Ps2Unreal-0.1.1-SHA256.txt` | 三个 ZIP 的 SHA-256 |
+| `Ps2Unreal-0.1.1-SHA256.txt` | 两个 ZIP 的 SHA-256 |
 
-预编译包必须与 UE 小版本严格对应，不能把 UE 5.7 二进制直接用于 UE 5.8。源码编译需要 Visual Studio 2022 和目标引擎支持的 MSVC v143/Windows SDK。
+安装包必须与 UE 小版本严格对应，不能把 UE 5.7 版本直接用于 UE 5.8。当前公开版本仅支持 Epic Launcher 的 UE 5.7/5.8 Win64。
 
 ## 安装
 
@@ -25,8 +24,7 @@ Ps2Unreal `0.1.1` 是 Unreal Engine 5 编辑器插件，用于把 PS2UI Photosho
 2. 下载与引擎版本匹配的 ZIP 并解压。
 3. 把完整 `Ps2Unreal` 文件夹复制到 `<项目根目录>/Plugins/Ps2Unreal`。
 4. 确认最终路径是 `<项目>/Plugins/Ps2Unreal/Ps2Unreal.uplugin`，不能多套一层同名目录。
-5. 打开项目；源码包首次打开时允许 Unreal 编译插件。
-6. 进入 `Edit -> Plugins`，搜索 `Ps2Unreal` 并启用，按提示重启编辑器。
+5. 打开项目，进入 `Edit -> Plugins`，搜索 `Ps2Unreal` 并启用，按提示重启编辑器。
 
 正确结构：
 
@@ -36,8 +34,7 @@ Ps2Unreal `0.1.1` 是 Unreal Engine 5 编辑器插件，用于把 PS2UI Photosho
   Plugins/
     Ps2Unreal/
       Ps2Unreal.uplugin
-      Source/
-      Binaries/        # 预编译包才有
+      Binaries/
 ```
 
 ## 导入操作
@@ -83,7 +80,7 @@ PS2UI Package 已包含字体身份和排版参数，不需要在导入前额外
 - 升级：关闭编辑器，用匹配引擎版本的新 `Ps2Unreal` 完整覆盖旧目录，再启动项目。
 - 卸载：关闭编辑器并删除 `<项目>/Plugins/Ps2Unreal`；生成的 `/Game/Ps2Unreal` 资源可按项目需要保留。
 - Plugins 列表找不到：检查 `.uplugin` 是否直接位于 `Plugins/Ps2Unreal`，并确认没有 `Plugins/Ps2Unreal/Ps2Unreal/Ps2Unreal.uplugin` 的重复嵌套。
-- “模块缺失或使用不同引擎版本构建”：换用匹配的小版本预编译包，或安装 C++ 工具链后使用源码包重新编译。
+- “模块缺失或使用不同引擎版本构建”：换用与当前 UE 小版本严格匹配的 Win64 安装包。
 - 重导可能重建生成 Widget，业务蓝图逻辑应放在生成 Widget 的子类或外层页面。
 
 ## 校验下载
@@ -91,7 +88,6 @@ PS2UI Package 已包含字体身份和排版参数，不需要在导入前额外
 ```powershell
 Get-FileHash .\Ps2Unreal-0.1.1-UE5.7-Win64.zip -Algorithm SHA256
 Get-FileHash .\Ps2Unreal-0.1.1-UE5.8-Win64.zip -Algorithm SHA256
-Get-FileHash .\Ps2Unreal-0.1.1.zip -Algorithm SHA256
 ```
 
 输出应与 `Ps2Unreal-0.1.1-SHA256.txt` 一致。
