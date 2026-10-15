@@ -1,6 +1,8 @@
 # Ps2Unreal Releases
 
-Ps2Unreal `0.1.1` 是 Unreal Engine 5 编辑器插件，用于把 PS2UI Photoshop Package 导入为可编辑的 UMG Widget Blueprint。插件只在编辑器运行，生成资源使用 UE/UMG 标准类型，游戏运行时和正式打包不依赖插件。
+Ps2Unreal `0.1.2` 是 Unreal Engine 5 编辑器插件，用于把 PS2UI Photoshop Package 导入为可编辑的 UMG Widget Blueprint。插件只在编辑器运行，生成资源使用 UE/UMG 标准类型，游戏运行时和正式打包不依赖插件。
+
+UE 5.8 更新至 0.1.2：修复同名画板冲突，并保留 PNG 原始 RGBA，使重启编辑器后的严格图片复用稳定命中。UE 5.7 沿用原 0.1.1 正式包；本批次未重新编译 UE 5.7。
 
 ## 前置：安装 PS2UI
 
@@ -12,9 +14,9 @@ Ps2Unreal `0.1.1` 是 Unreal Engine 5 编辑器插件，用于把 PS2UI Photosho
 
 | 文件 | 用途 |
 |---|---|
-| `Ps2Unreal-0.1.1-UE5.7-Win64.zip` | UE 5.7 Win64 预编译包 |
-| `Ps2Unreal-0.1.1-UE5.8-Win64.zip` | UE 5.8 Win64 预编译包 |
-| `Ps2Unreal-0.1.1-SHA256.txt` | 两个 ZIP 的 SHA-256 |
+| `Ps2Unreal-0.1.1-UE5.7-Win64.zip` | UE 5.7 Win64 原 0.1.1 正式兼容包 |
+| `Ps2Unreal-0.1.2-UE5.8-Win64.zip` | UE 5.8 Win64 0.1.2 修复版 |
+| `Ps2Unreal-0.1.2-SHA256.txt` | 两个 ZIP 的 SHA-256 |
 
 安装包必须与 UE 小版本严格对应，不能把 UE 5.7 版本直接用于 UE 5.8。当前公开版本仅支持 Epic Launcher 的 UE 5.7/5.8 Win64。
 
@@ -87,7 +89,7 @@ PS2UI Package 已包含字体身份和排版参数，不需要在导入前额外
 
 ```powershell
 Get-FileHash .\Ps2Unreal-0.1.1-UE5.7-Win64.zip -Algorithm SHA256
-Get-FileHash .\Ps2Unreal-0.1.1-UE5.8-Win64.zip -Algorithm SHA256
+Get-FileHash .\Ps2Unreal-0.1.2-UE5.8-Win64.zip -Algorithm SHA256
 ```
 
-输出应与 `Ps2Unreal-0.1.1-SHA256.txt` 一致。
+输出应与 `Ps2Unreal-0.1.2-SHA256.txt` 一致。
